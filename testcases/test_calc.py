@@ -10,6 +10,7 @@ from data.calc_data import add_test_data, sub_test_data
 @pytest.mark.smoke
 @pytest.mark.parametrize("a,b,expected", add_test_data)
 def test_add(calc, a, b, expected):
+    print('calc.add(a,b)+smoke')
     assert calc.add(a, b) == expected
 
 @pytest.mark.regression

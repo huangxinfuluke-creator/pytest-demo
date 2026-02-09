@@ -1,0 +1,10 @@
+name: smoke.yml
+on:
+  schedule:
+    - cron: "0 3 * * *"
+    - cron: "15 3 * * *"
+    - cron: "30 3 * * *"
+
+jobs:
+  smoke:
+    run: pytest -m smoke
