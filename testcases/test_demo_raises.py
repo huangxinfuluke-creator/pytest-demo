@@ -11,7 +11,7 @@ def add(a, b):
 
 def test_add_string():
     with pytest.raises(TypeError, match="only numbers"):
-        add("slut", "bitch")
+        add("slaaaut", "biaaatch")
 
 
 @pytest.mark.parametrize(

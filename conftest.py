@@ -1,5 +1,29 @@
 import pytest
 from common.calculator import Calculator
+from api.simple_book_api import SimpleBookAPI
+import time
+
+
+
+@pytest.fixture(scope="session")
+def token():
+    api = SimpleBookAPI()
+    email = f"pytest_{int(time.time())}@gmail.com"
+    response = api.post_register_api_clients(
+        client_email=email,
+        client_name="luke"
+    )
+    print('返回token是：'+str(response.json()))
+    if response.status_code not in [200, 201]:
+        raise Exception(f"Token generation failed: {response.text}")
+
+    token = response.json().get("accessToken")
+
+    if not token:
+        raise Exception("No access token returned")
+
+    return token
+
 
 # session scope fixture
 @pytest.fixture(scope="session")
