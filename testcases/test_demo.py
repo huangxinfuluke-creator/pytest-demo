@@ -7,7 +7,7 @@ from common.calculator import Calculator
 	[
 		pytest.param(1, 2, 3, id="normal"),
 		pytest.param(1.2, 2.3, 3.5, id="float"),
-		pytest.param("slaaaut", " biaaatch", "slaaaut biaaaatch" , id="str"),
+		pytest.param("slaaaut", " biaaatch", "slaaaut biaaatch" , id="str"),
 
 	]
 )
